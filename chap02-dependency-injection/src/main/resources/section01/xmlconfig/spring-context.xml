@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!-- property   setter 이용방식 -->
+    <bean id="member" class="com.ohgirrafers.common.MemberDTO">
+        <property name="seq" value="1"/>
+        <property name="name" value="홍길동"/>
+        <property name="phone" value="010-2222-3333"/>
+        <property name="email" value="hong@gmail.com"/>
+        <property name="personalAccount" ref="account"/>
+    </bean>
+
+
+<!--  constructor-arg  생성자 이용방식-->
+    <bean id="account" class="com.ohgirrafers.common.PersonalAccount">
+        <constructor-arg index="0" value="20"/>
+        <constructor-arg index="1" value="110-223-423321"/>
+    </bean>
+
+</beans>
