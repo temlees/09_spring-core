@@ -19,9 +19,15 @@ public class BookDAOImpl implements BookDAO {
 
     }
 
+
     @Override
     public List<BookDTO> selectBookList() {
         return new ArrayList<>(bookList.values());
+     //new ArrayList<>(bookList.values())는 Map에서 값을 꺼내와 새로운 리스트로 변환하기 위한 작업이며
+        // ,이는 List 타입으로 변환하여 반환하기 위해 필요합니다.
+        //new ArrayList<>(...)는 새로운 ArrayList 객체를 생성하는 코드
+        //생성자 인자에 Collection을 넘기면, 그 Collection의 모든 요소를 복사해서 새로운 리스트를 만듭니다
+        //한마디로 맵에 있는 VALUE를 꺼내 새로운 배열에 넣고 그걸 반환하겠다는 뜻이다
     }
 
     @Override
